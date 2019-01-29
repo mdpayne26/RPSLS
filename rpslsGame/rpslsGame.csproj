@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompPlayer.cs" />
+    <Compile Include="Comp.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="UserPlayer.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

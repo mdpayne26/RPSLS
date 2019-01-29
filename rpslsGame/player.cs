@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 
 namespace rpslsGame
 {
-    class Player //(is a)
-    {   // get player name
-        // get player gesture
-        // member variables (has a)
-        String gesture;
-        int score;
-        string name;
+    public abstract class Player 
+    {
+        public string Gesture;
+        public int score;
+        public string name;
 
-        // construstor (spawner)
+        public abstract void ChooseGesture();
+        public abstract void GetPlayerName();
 
-        // member methods (can do)
-        public virtual void ChooseGesture()
-        {
-            string gesture = "rock, paper, scissors, lizard, spock";
-           
-        }
 
-        public void ChooseName();
-  
+
+
+
+
 
     }
-           
+
 }

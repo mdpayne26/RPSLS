@@ -6,125 +6,84 @@ using System.Threading.Tasks;
 
 namespace rpslsGame
 {
-    class Game // (is a)
-    {   // display rules
-        //compare gestures
-        //determin winner
-        //check if game winner
+    class Game
+    {
+        //display rules
+       
+        //get player names
 
 
-        // member variables (has a)
-        public Player playerOne;
-        public Player playerTwo;
-        // construstor (spawner)
 
-        // member methods (can do)
+        //choose game mode(comp or user)
+         Player PlayerOne;
+         Player PlayerTwo;
 
 
-        private void GetPlayers()
+        public void GetPlayers()
         {
-            Console.WriteLine("One or Two players");
-            string userInput = (Console.ReadLine());
-            if (userInput == "1") 
+            Console.WriteLine(" 1 or 2 Players?");
+            string userInput = Console.ReadLine();
+            if(userInput == "1")
             {
-                playerOne = new UserPlayer();
-                playerTwo = new CompPlayer();
+                PlayerOne = new User();             
+                PlayerTwo = new Comp();
             }
-            else if (userInput == "2") 
+            else if(userInput == "2")
             {
-                playerOne = new UserPlayer();
-                playerTwo = new UserPlayer();
+                PlayerOne = new User();
+                PlayerTwo = new User();
             }
         }
+        //compare gestures
+        //determine round winner 
+        //-increment counter
+        //checked if game winner
+        //-if not game winner repeat steps
+        //--if game winner ask play again?
+        public void listWeapons()
+        {
+            Console.WriteLine("Rock = 0\n");
+            Console.WriteLine("Paper = 1\n");
+            Console.WriteLine("Scissors = 2\n");
+            Console.WriteLine("Lizard = 3\n");
+            Console.WriteLine("Spock = 4\n");
+
+           
+        }
+
 
 
         public void RunGame()
         {
-            Console.WriteLine("Scissors cuts Paper and decapitate Lizard, Paper covers Rock and disproves Spock, Rock crushes Lizard and Scissors," +
-           " Lizard poisons Spock and eats Paper, Spock vaporizes Rock and smashes Scissors.");
+            Console.WriteLine("Display rules\n ");
+            Console.WriteLine("Scissors cuts paper. Paper covers rock. Rock crushes lizard." +
+                " Lizard poisons Spock. Spock smashes scissors, scissors decapitates lizard." +
+                " Lizard eats paper, paper disproves Spock. Spock vaporizes rock. And, as it always has," +
+                " rock crushes scissors.﻿");
+
             GetPlayers();
-            playerOne.ChooseGesture();
-            playerTwo.ChooseGesture();
+
+
+            PlayerOne.GetPlayerName();
+            PlayerTwo.GetPlayerName();
+            
+            List<string> Gestures = new List<string>();
+            Gestures.Add("Rock");
+            Gestures.Add("Paper");
+            Gestures.Add("scissors");
+            Gestures.Add("Lizard");
+            Gestures.Add("Spock");
+
+            listWeapons();
+
+            PlayerOne.ChooseGesture();
+            PlayerTwo.ChooseGesture();
+            Console.WriteLine(PlayerOne.name + " picked " + Gestures(PlayerOne.Gesture));
+            Console.ReadLine();
         }
 
-
-    
-
-
-    public void GestureList()
-
-    {
-       // Console.WriteLine("please choose your weapon \n");
-       // Console.WriteLine("Press [1] to use rock.");
-       // Console.WriteLine("Press [2] to use scissors.");
-       // Console.WriteLine("Press [3] to use paper.");
-       // Console.WriteLine("Press [4] to use lizzard.");
-       // Console.WriteLine("Press [5] to use spock.\n");
         
-       // string userInput = Console.ReadLine();
-
-       // switch ("1") // userinput
-       // {
-       //     case "scissors":
-       //         Console.WriteLine("Sorry but your scissors were crushed by a rock.");
-       //         break;
-       //     case "lizzard":
-       //         Console.WriteLine("Sorry but your lizzard was crushed by a rock.");
-       //         break;
-       //     default:
-       //         Console.WriteLine("Not a valid choice");
-       //         break;
-       // }
-       // switch ("2")
-       // {
-       //     case "paper":
-       //         Console.WriteLine("Sorry but your paper was cut by scissors.");
-       //         break;
-       //     case "lizzard":
-       //         Console.WriteLine("Sorry but your lizzard was decapitated by scissors.");
-       //         break;
-       //     default:
-       //         Console.WriteLine("Not a valid choice");
-       //         break;
-       // }
-       //switch ("3")
-       // { 
-       //     case "rock":
-       //         Console.WriteLine("Sorry but your rock was covered by paper.");
-       //         break;
-       //     case "spock":
-       //         Console.WriteLine("Sorry but your spock was disproved by paper.");
-       //         break;
-       //     default:
-       //         Console.WriteLine("Not a valid choice");
-       //         break;
-       // }
-       // switch ("4")
-       // { 
-       //     case "spock":
-       //         Console.WriteLine("Sorry but your spock was poisoned by a lizzard.");
-       //         break;
-       //     case "paper":
-       //         Console.WriteLine("Sorry but your paper was eatten by a lizzard.");
-       //         break;
-       //     default:
-       //         Console.WriteLine("Not a valid choice");
-       //         break;
-       // }
-       // switch ("5")
-       // {
-       //     case "scissors":
-       //         Console.WriteLine("Sorry but you scissors were smashed by spock.");
-       //         break;
-       //     case "rock":
-       //         Console.WriteLine("Sorry but your rock was vaporizes by spock.");
-       //         break;
-       //     default:
-       //         Console.WriteLine("Not a valid choice");
-       //         break;
-       // }
-
-
-    }
     }
 }
+    
+
