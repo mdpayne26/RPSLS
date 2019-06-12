@@ -8,16 +8,9 @@ namespace rpslsGame
 {
     class Game
     {
-        //display rules
-       
-        //get player names
-
-
-
         //choose game mode(comp or user)
          Player PlayerOne;
          Player PlayerTwo;
-
 
         public void GetPlayers()
         {
@@ -34,12 +27,7 @@ namespace rpslsGame
                 PlayerTwo = new User();
             }
         }
-        //compare gestures
-        //determine round winner 
-        //-increment counter
-        //checked if game winner
-        //-if not game winner repeat steps
-        //--if game winner ask play again?
+        
         public void listWeapons()
         {
             Console.WriteLine("Rock = 0\n");
@@ -51,10 +39,9 @@ namespace rpslsGame
            
         }
 
-
-
         public void RunGame()
         {
+            //display rules
             Console.WriteLine("Display rules\n ");
             Console.WriteLine("Scissors cuts paper. Paper covers rock. Rock crushes lizard." +
                 " Lizard poisons Spock. Spock smashes scissors, scissors decapitates lizard." +
@@ -62,7 +49,6 @@ namespace rpslsGame
                 " rock crushes scissors.﻿");
 
             GetPlayers();
-
 
             PlayerOne.GetPlayerName();
             PlayerTwo.GetPlayerName();
@@ -78,11 +64,18 @@ namespace rpslsGame
 
             PlayerOne.ChooseGesture();
             PlayerTwo.ChooseGesture();
-            Console.WriteLine(PlayerOne.name + " picked " + Gestures(PlayerOne.Gesture));
+            Console.WriteLine(PlayerOne.name + " picked " + PlayerOne.Gesture);
             Console.ReadLine();
+
+            //compare gestures
+            //determine round winner 
+            //-increment counter
+            //checked if game winner
+            //-if not game winner repeat steps
+            //--if game winner ask play again?
         }
 
-        
+
     }
 }
     
