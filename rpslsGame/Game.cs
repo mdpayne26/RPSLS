@@ -9,17 +9,18 @@ namespace rpslsGame
     class Game
     {
         //choose game mode(comp or user)
-         Player PlayerOne;
-         Player PlayerTwo;
+        Player PlayerOne;
+        Player PlayerTwo;
+        Player Comp;
 
         public void GetPlayers()
         {
-            Console.WriteLine(" 1 or 2 Players?");
+            Console.WriteLine(" Single player or two players? Press 1 for single player or press 2 for two players");
             string userInput = Console.ReadLine();
             if(userInput == "1")
             {
                 PlayerOne = new User();             
-                PlayerTwo = new Comp();
+                Comp = new Comp();
             }
             else if(userInput == "2")
             {

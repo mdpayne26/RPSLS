@@ -18,8 +18,8 @@ namespace rpslsGame
         }
         public override void GetPlayerName()
         {
-            //Console.WriteLine("Computer");
-            name = "computer";
+            Console.WriteLine("Computer");
+            name = Console.ReadLine();
         }
     }
 }

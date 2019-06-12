@@ -19,7 +19,7 @@ namespace rpslsGame
         //playerOne = new User();
         public override void GetPlayerName()
         {
-            Console.WriteLine("Please enter your name: ");
+            Console.WriteLine("Player one please enter your name: ");
             name = Console.ReadLine();
         }
     }
