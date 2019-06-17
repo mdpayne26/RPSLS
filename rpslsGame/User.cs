@@ -13,13 +13,13 @@ namespace rpslsGame
         public override void ChooseGesture()
         {
             Console.WriteLine("Please enter your gesture: ");
-            Gesture = Console.ReadLine();
+            Gesture = Int32.Parse(Console.ReadLine());
         }
 
         //playerOne = new User();
         public override void GetPlayerName()
         {
-            Console.WriteLine("Player one please enter your name: ");
+            Console.WriteLine("Player please enter your name: ");
             name = Console.ReadLine();
         }
     }

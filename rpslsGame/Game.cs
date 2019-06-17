@@ -11,7 +11,7 @@ namespace rpslsGame
         //choose game mode(comp or user)
         Player PlayerOne;
         Player PlayerTwo;
-        Player Comp;
+        
 
         public void GetPlayers()
         {
@@ -20,7 +20,7 @@ namespace rpslsGame
             if(userInput == "1")
             {
                 PlayerOne = new User();             
-                Comp = new Comp();
+                PlayerTwo = new Comp();
             }
             else if(userInput == "2")
             {
@@ -28,7 +28,7 @@ namespace rpslsGame
                 PlayerTwo = new User();
             }
         }
-        
+       
         public void listWeapons()
         {
             Console.WriteLine("Rock = 0\n");
@@ -36,12 +36,16 @@ namespace rpslsGame
             Console.WriteLine("Scissors = 2\n");
             Console.WriteLine("Lizard = 3\n");
             Console.WriteLine("Spock = 4\n");
-
-           
         }
 
         public void RunGame()
         {
+            GetPlayers();
+
+            PlayerOne.GetPlayerName();
+            PlayerTwo.GetPlayerName();
+
+
             //display rules
             Console.WriteLine("Display rules\n ");
             Console.WriteLine("Scissors cuts paper. Paper covers rock. Rock crushes lizard." +
@@ -49,10 +53,7 @@ namespace rpslsGame
                 " Lizard eats paper, paper disproves Spock. Spock vaporizes rock. And, as it always has," +
                 " rock crushes scissors.﻿");
 
-            GetPlayers();
-
-            PlayerOne.GetPlayerName();
-            PlayerTwo.GetPlayerName();
+            
             
             List<string> Gestures = new List<string>();
             Gestures.Add("Rock");
@@ -64,11 +65,16 @@ namespace rpslsGame
             listWeapons();
 
             PlayerOne.ChooseGesture();
-            PlayerTwo.ChooseGesture();
-            Console.WriteLine(PlayerOne.name + " picked " + PlayerOne.Gesture);
+            Console.WriteLine(PlayerOne.name + " chose " + PlayerOne.Gesture);
             Console.ReadLine();
+            PlayerTwo.ChooseGesture();
+            Console.WriteLine(PlayerTwo.name + " chose " + PlayerTwo.Gesture);
+            Console.ReadLine();
+            
 
             //compare gestures
+            
+
             //determine round winner 
             //-increment counter
             //checked if game winner
