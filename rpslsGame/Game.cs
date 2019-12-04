@@ -54,6 +54,7 @@ namespace rpslsGame
                 " Lizard eats paper, paper disproves Spock. Spock vaporizes rock. And, as it always has," +
                 " rock crushes scissors.﻿");
         }
+        // display players choice
         public void SetPlayerGesture()
         {
             playerOne.SetGestureChoice();
@@ -61,6 +62,7 @@ namespace rpslsGame
             playerTwo.SetGestureChoice();
             DisplayChoice(playerTwo);
         }
+        // get player choice
         public void DisplayChoice(Player player)
         {
             switch (player.gestureChoice)
@@ -82,33 +84,46 @@ namespace rpslsGame
                     break;
             }
         }
+        public int CalculateWinner()
+        {
+            int multiplier = 5;
+            int roundResult = (multiplier + playerOne.gestureChoice - playerTwo.gestureChoice) % multiplier;
+            return roundResult;
+        }
+        public void CheckWinner(int roundResult)
+        {
+            if(roundResult ==1 || roundResult == 3)
+            {
+                Console.WriteLine("{0} wins the round!\n", playerOne.name);
+                IncrementScore(playerOne);
+            }
+            else if (roundResult == 2|| roundResult == 4)
+            {
+                Console.WriteLine("{0} wins the round!\n", playerTwo.name);
+                IncrementScore(playerTwo);
+            }
+            else if (roundResult == 0)
+            {
+                Console.WriteLine("its a tie");
+            }
+        }
+        public void IncrementScore(Player player)
+        {
+            player.score++;
+        }
         public void RunGame()
         {
             GetPlayers();
-            //PlayerOne.GetPlayerName();
-            //PlayerTwo.GetPlayerName();
+            SetPlayerNames();
             DisplayRules();
+            SetPlayerGesture();
 
 
            
 
 
 
-            //List<string> Gestures = new List<string>();
-            //Gestures.Add("Rock");
-            //Gestures.Add("Paper");
-            //Gestures.Add("scissors");
-            //Gestures.Add("Lizard");
-            //Gestures.Add("Spock");
-
-            //listWeapons();
-
-            //PlayerOne.SetGestureChoice();
-            //Console.WriteLine(PlayerOne.name + " chose " + PlayerOne.Gesture);
-            //Console.ReadLine();
-            //PlayerTwo.SetGestureChoice();
-            //Console.WriteLine(PlayerTwo.name + " chose " + PlayerTwo.Gesture);
-            //Console.ReadLine();
+            
             
 
             //compare gestures
