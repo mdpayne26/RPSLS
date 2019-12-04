@@ -8,7 +8,7 @@ namespace rpslsGame
 {
     class Comp : Player
     {
-        Random rnd;
+        //Random rnd;
         public Comp()
         {
              

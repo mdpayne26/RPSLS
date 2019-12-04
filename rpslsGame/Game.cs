@@ -33,19 +33,6 @@ namespace rpslsGame
             playerTwo.GetPlayerName();
             Console.Clear();
         }
-        public void listWeapons()
-        {
-
-            Console.WriteLine("Rock = 0\n");
-            Console.WriteLine("Paper = 1\n");
-            Console.WriteLine("Scissors = 2\n");
-            Console.WriteLine("Lizard = 3\n");
-            Console.WriteLine("Spock = 4\n");
-        }
-        public void Battle()
-        {
-            //switch case
-        }
         public void DisplayRules()
         {
             Console.WriteLine("Display rules\n ");
@@ -111,22 +98,27 @@ namespace rpslsGame
         {
             player.score++;
         }
+        public void CheckWinner()
+        {
+            if(playerOne.score == 2)
+            {
+                Console.WriteLine("{0} wins the game!\n", playerOne.name);
+            }
+            else if(playerTwo.score == 2)
+            {
+                Console.WriteLine("{0} wins the game!|n", playerTwo.name);
+            }
+        }
         public void RunGame()
         {
             GetPlayers();
             SetPlayerNames();
             DisplayRules();
             SetPlayerGesture();
-
-
+            CalculateWinner();
+            CheckWinner();
            
-
-
-
             
-            
-
-            //compare gestures
             
 
             //determine round winner 
