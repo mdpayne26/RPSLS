@@ -8,13 +8,13 @@ namespace rpslsGame
 {
     public abstract class Player 
     {
-        public int Gesture;
+        public int gestureChoice;
         public int score;
         public string name;
 
         
 
-        public abstract void ChooseGesture();
+        public abstract void SetGestureChoice();
         
         public abstract void GetPlayerName();
 

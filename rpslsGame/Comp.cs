@@ -11,30 +11,19 @@ namespace rpslsGame
         Random rnd;
         public Comp()
         {
-             rnd = new Random();
-            
+             
         }
-        //public string Gesture[] = new string[5] { "Rock", "Paper", "scissors", "Lizard", "Spock"}
         //choose gesture
-        public override void ChooseGesture()
+        public override void SetGestureChoice()
         {
             //random generator for gestures
-           
-            Console.WriteLine(rnd.Next(5));
-            Console.WriteLine(rnd.Next(5));
-            Console.WriteLine(rnd.Next(5));
-            //return Gesture;
-            //string result = Gesture[randomNumber];
-            //return result;
-            //int compGesture = Gesture[randomNumber];
+            Random random = new Random();
+            gestureChoice = random.Next(0, 4);
         }
         public override void GetPlayerName()
         {
-            Console.WriteLine("Computer name: ");
-            name = Console.ReadLine();
+            name = "Computer";
         }
-
-        
     }
 }
 
